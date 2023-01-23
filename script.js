@@ -67,4 +67,3 @@ function roll(){
     1000
     );
 }
-roll();
