@@ -6,10 +6,12 @@
 body{
     height: 100vh;
     background: linear-gradient(
-        #e92e3d,
-        #ff6e6a
+        white,
+        #e92e3d
     ) 0 100% no-repeat;
     background-size: 100% 50%;
+    padding-bottom:150px;
+    min-height: 550px;
 }
 footer{
     width: 100%;
