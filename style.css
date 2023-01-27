@@ -13,12 +13,24 @@ body{
     padding-bottom:150px;
     min-height: 550px;
 }
+nav{
+    width: 100%;
+    font-family: "Poppins",sans-serif;
+    color: #e92e3d;
+    text-align: center;
+    font-size: 2.5em;
+    display: inline-block;
+}
 footer{
     width: 100%;
     position: absolute;
     bottom: 0;
     text-align: center;
     color: white;
+}
+a{
+    color:#e92e3d;
+    text-decoration: none;
 }
 .fa {
     padding: 50px;
