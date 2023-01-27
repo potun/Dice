@@ -18,7 +18,7 @@ function roll() {
         let dieValues = [];
         dice.forEach((die) => {
             dieValues.push(Math.floor(Math.random() * 6));
-            die.setAttribute("src", images[dieValues[dieValues.length - 1]]);
+            die.setAttribute("src", "/images/" + images[dieValues[dieValues.length - 1]]);
         });
         for (let i = 0; i < dieValues.length; i++) {
             dieValues[i]++;
