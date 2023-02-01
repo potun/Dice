@@ -5,6 +5,7 @@ let images = ["dice-01.svg",
 "dice-05.svg",
 "dice-06.svg"];
 let dice = document.querySelectorAll("img");
+let counter = 0;
 
 function roll() {
     let dice = document.querySelectorAll(".die");
@@ -46,4 +47,19 @@ function roll() {
         console.log(result);
 
     }, 1000);
-};
+}
+
+function addDie() {
+    d3.xml('/static/dice-06.svg')
+        .then(data => {
+            document.querySelector(".dice-wrapper").append(data.documentElement);
+        });
+    counter++;
+}
+
+
+function removeDie() {
+    let diceWrapper = document.querySelector(".dice-wrapper");
+    diceWrapper.removeChild(diceWrapper.lastChild);
+    counter--;
+}

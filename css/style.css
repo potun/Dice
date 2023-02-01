@@ -80,6 +80,7 @@ button{
     letter-spacing: 1px;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
 }
 .shake{
     animation: shake 0.5s infinite;
