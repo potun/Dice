@@ -50,7 +50,7 @@ function roll() {
 }
 
 function addDie() {
-    d3.xml('/static/dice-06.svg')
+    d3.xml('/images/dice-06.svg')
         .then(data => {
             document.querySelector(".dice-wrapper").append(data.documentElement);
         });
