@@ -6,6 +6,7 @@ let images = ["dice-01.svg",
 "dice-06.svg"];
 let dice = document.querySelectorAll("img");
 let counter = 0;
+let point = 0;
 
 function roll() {
     let dice = document.querySelectorAll(".die");
@@ -26,7 +27,7 @@ function roll() {
         }
         console.log(dieValues);
 
-        document.querySelector("#result").innerHTML = ceelo(dieValues);
+        document.querySelector("#result").innerHTML = craps(dieValues);
     }, 1000);
 }
 
@@ -54,22 +55,36 @@ function ceelo(dieValues) {
 
 function craps(dieValues) {
     let result = "";
-    if (dieValues[0] == dieValues[1]) {
-        if (dieValues[1] == dieValues[2]) {
-            result = "Triples! You win!"
-        } else {
-            result += dieValues[2] + " points";
+    let total = 0;
+    dieValues.forEach(value => {
+        total += value;
+    });
+    console.log(total);
+    if (point == 0) { // first roll
+        switch (total) {
+            case 7:
+            case 11:
+                result = "You win!";
+                break;
+            case 2:
+            case 3:
+            case 12:
+                result = "You lose!";
+                break;
+            default:
+                result = total + " points";
+                point = total;
         }
-    } else if (dieValues[0] == dieValues[2]) {
-        result += dieValues[1] + " points";
-    } else if (dieValues[1] == dieValues[2]) {
-        result += dieValues[0] + " points";
-    } else if (dieValues.includes(4) && dieValues.includes(5) && dieValues.includes(6)) {
-        result = "4-5-6 you WIN!";
-    } else if (dieValues.includes(1) && dieValues.includes(2) && dieValues.includes(3)) {
-        result = "1-2-3 you lose";
     } else {
-        result = "Roll again";
+        if (total == point) {
+            result = "You win!";
+            point = 0;
+        } else if (total == 7) {
+            result = "You lose!";
+            point = 0;
+        } else {
+            result = "Roll again";
+        }
     }
     return result;
 }
