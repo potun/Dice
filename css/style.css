@@ -82,6 +82,9 @@ button{
     cursor: pointer;
     margin: 5px;
 }
+.die:hover{
+    animation: shake 0.5s infinite;
+}
 .shake{
     animation: shake 0.5s infinite;
 }
