@@ -8,7 +8,7 @@ let dice = document.querySelectorAll("img");
 let counter = 0;
 let point = 0;
 
-function roll() {
+function roll(gameMode) {
     let dice = document.querySelectorAll(".die");
     dice.forEach(function (die) {
         die.classList.add("shake");
@@ -26,8 +26,13 @@ function roll() {
             dieValues[i]++;
         }
         console.log(dieValues);
-
-        document.querySelector("#result").innerHTML = craps(dieValues);
+        let result = "";
+        if(gameMode === "ceelo") {
+            result = ceelo(dieValues);
+        } else if (gameMode === "craps"){
+            result = craps(dieValues);
+        }
+        document.querySelector("#result").innerHTML = result;
     }, 1000);
 }
 
@@ -88,6 +93,7 @@ function craps(dieValues) {
     }
     return result;
 }
+
 
 function addDie() {
     d3.xml('/images/dice-06.svg')
