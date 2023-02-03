@@ -3,11 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+    --color: #762ee9;
+}
 body{
     height: 100vh;
     background: linear-gradient(
         white,
-        #e92e3d
+        var(--color)
     ) 0 100% no-repeat;
     background-size: 100% 50%;
     padding-bottom:150px;
@@ -16,7 +19,7 @@ body{
 nav{
     width: 100%;
     font-family: "Poppins",sans-serif;
-    color: #e92e3d;
+    color: var(--color);
     text-align: center;
     font-size: 2.5em;
     display: inline-block;
@@ -29,7 +32,7 @@ footer{
     color: white;
 }
 a{
-    color:#e92e3d;
+    color: var(--color);
     text-decoration: none;
 }
 .fa {
@@ -47,8 +50,8 @@ a{
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 15px 25px rgba(50,50,50,0.15);
+    background-color: white;
+    box-shadow: 0 15px 25px rgba(50,50,50,0.25);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -62,7 +65,7 @@ a{
 }
 h1{
     font-family: "Poppins",sans-serif;
-    color: #e92e3d;
+    color: var(--color);
     text-align: center;
 }
 p{
@@ -71,10 +74,10 @@ p{
     font-weight: 500;
 }
 button{
-    background-color: #e92e3d;
+    background-color: var(--color);
     border: none;
     outline: none;
-    color: #ffffff;
+    color: white;
     padding: 15px 0;
     width: 150px;
     letter-spacing: 1px;
