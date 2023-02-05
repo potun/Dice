@@ -59,9 +59,10 @@ a{
     font-family: "Poppins",sans-serif;
 }
 .dice-wrapper{
-    width: 75%;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 h1{
     font-family: "Poppins",sans-serif;
