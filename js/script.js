@@ -36,6 +36,22 @@ function roll(gameMode) {
     }, 1000);
 }
 
+function roller() {
+    d3.selectAll(".die").classed("shake", true);
+    setTimeout(function () {
+        d3.selectAll(".die").classed("shake", false);
+
+        d3.selectAll(".die").remove();
+        for (let i = 1; i <= counter; i++) {
+            let value = Math.floor(Math.random() * 6 + 1);
+            d3.xml('/images/dice-0' + value + '.svg')
+                .then(data => {
+                    document.querySelector(".dice-wrapper").append(data.documentElement)
+                });
+        }
+    }, 1000);
+}
+
 function ceelo(dieValues) {
     let result = "";
     if (dieValues[0] == dieValues[1]) {
